@@ -5,7 +5,6 @@ import java.util.Date;
 public class Product {
     private int barCode;
     private String name;
-    private Date date;
     private String describe;
 
     public Product(int barCode, String name,String describe) {
