@@ -1,6 +1,7 @@
 package org.example.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Product {
     private int barCode;
@@ -26,9 +27,20 @@ public class Product {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return barCode == product.barCode;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(barCode);
+    }
+
+    @Override
     public String toString(){
-        return "Nome do produto: " + getName() +
-               "\nCodigo de barras: " + getBarCode() +
-               "\nDescrição: " + getDescribe();
+        return getName();
     }
 }
