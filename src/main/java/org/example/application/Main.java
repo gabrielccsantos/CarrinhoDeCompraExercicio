@@ -1,5 +1,6 @@
 package org.example.application;
 
+import org.example.Exceptions.BarCodeEquals;
 import org.example.entities.Item;
 import org.example.entities.Product;
 
@@ -9,9 +10,12 @@ import java.math.BigDecimal;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Item i = new Item(new Product(123,"Tv","grande"), new BigDecimal(1000),2);
+        try{
+            Product p1 = new Product(123, "Tv", "Grande");
+            Product p2 = new Product(123, "Notebook", "Pequeno");
+        }catch (BarCodeEquals e){
+            System.out.println(e.getMessage());
+        }
 
-
-        System.out.println(i);
     }
 }
