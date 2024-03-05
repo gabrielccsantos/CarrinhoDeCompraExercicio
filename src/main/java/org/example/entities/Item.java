@@ -17,8 +17,16 @@ public class Item {
         return product;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public BigDecimal getValueOfUnit() {
         return valueOfUnit;
+    }
+
+    public void setValueOfUnit(BigDecimal valueOfUnit) {
+        this.valueOfUnit = valueOfUnit;
     }
 
     public int getQuantity() {
