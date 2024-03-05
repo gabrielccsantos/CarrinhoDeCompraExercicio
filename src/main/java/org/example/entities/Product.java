@@ -1,19 +1,11 @@
 package org.example.entities;
 
-import org.example.Exceptions.BarCodeEquals;
-
-import java.util.Date;
-import java.util.Objects;
-
 public class Product {
     private int barCode;
     private String name;
     private String describe;
 
     public Product(int barCode, String name,String describe) {
-        if(!equals(barCode)){
-            throw new BarCodeEquals("Codigo do produto já está cadastrado");
-        }
         this.barCode = barCode;
         this.name = name;
         this.describe = describe;
@@ -37,11 +29,6 @@ public class Product {
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
         return barCode == product.barCode;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(barCode);
     }
 
     @Override
