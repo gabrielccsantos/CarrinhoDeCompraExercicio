@@ -12,9 +12,10 @@ public class ShoppingCart {
         listItem = new ArrayList<>();
     }
 
-    public void addList(Item item){
+    public void addList(Item item)throws RuntimeException{
         for(Item i : listItem){
             if(i.getProduct().equals(item.getProduct())){
+                item.setQuantity(item.getQuantity() + i.getQuantity());
                 listItem.remove(i);
             }
         }
