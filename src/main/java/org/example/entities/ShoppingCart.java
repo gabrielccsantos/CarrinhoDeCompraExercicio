@@ -5,18 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    private List<Item> listItem = new ArrayList<>();
+    private List<Item> listItem;
+
+
+    public ShoppingCart(){
+        listItem = new ArrayList<>();
+    }
 
     public void addList(Item item){
         for(Item i : listItem){
             if(i.getProduct().equals(item.getProduct())){
-               i.setQuantity( i.getQuantity() + item.getQuantity());
-               if(!i.getValueOfUnit().equals(item.getValueOfUnit())){
-                   i.setValueOfUnit(item.getValueOfUnit());
-               }
+                listItem.remove(i);
             }
-            listItem.add(item);
         }
+        listItem.add(item);
     }
 
     public boolean removeItem(Product product){
@@ -30,10 +32,17 @@ public class ShoppingCart {
     }
 
     public BigDecimal getTotal(){
-        BigDecimal total = new BigDecimal("0");
-        for(Item item : listItem){
-            total.add(item.getTotal());
+        int soma = 0;
+        for(Item i : listItem){
+            soma += i.getTotal().intValue();
         }
-        return total;
+
+        return new BigDecimal(soma);
+    }
+
+    public void seeAll(){
+        for (Item item : listItem){
+            System.out.println(item);
+        }
     }
 }
