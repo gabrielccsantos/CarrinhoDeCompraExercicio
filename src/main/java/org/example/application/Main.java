@@ -5,14 +5,13 @@ import org.example.entities.Product;
 import org.example.entities.ShoppingCart;
 
 import java.math.BigDecimal;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         try{
             Item item1 = new Item(new Product(123,"TV", "Grande"), new BigDecimal(1000), 1);
             Item item2 = new Item(new Product(321, "microondas", "pequeno"), new BigDecimal(300), 2);
-            Item item3 = new Item(new Product(123, "TV", "Grande"), new BigDecimal(500), 3);
+            Item item3 = new Item(new Product(123, "TV", "Grande"), new BigDecimal(500), 2);
 
             ShoppingCart shoppingCart = new ShoppingCart();
 
