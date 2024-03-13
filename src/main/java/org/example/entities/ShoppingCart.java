@@ -42,8 +42,6 @@ public class ShoppingCart {
     }
 
     public void seeAll(){
-        for (Item item : listItem){
-            System.out.println(item);
-        }
+        listItem.forEach(x -> System.out.println(x));
     }
 }
